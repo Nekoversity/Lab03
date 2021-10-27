@@ -1,16 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    double f = 1.2, x;
-    double *pf;
-    pf = &f;
-    x = *pf;
+#define BUFFER_SIZE 100
 
-    printf("pf=%p; px=%p; f=%f; x=%f\n", pf, &x , f, x);
+int array_init()
+{
+    int buffer[BUFFER_SIZE];
+    int max = 100, min = -150;
 
-    f = 1.5;
+    for (int i = 0; i < sizeof(buffer)/sizeof(int); ++i)
+    {
+        buffer[i] = rand() % (max - min + 1) + min;
+    }
 
-    printf("pf=%p; px=%p; f=%f; x=%f", pf, &x , f, x);
+    for (int i = 0; i < sizeof(buffer)/sizeof(int); ++i)
+    {
+        if (i % 10 == 0) printf("\n");
+        printf("%d ", buffer[i]);
+    }
 
+    return 0;
+}
+
+int main()
+{
     return 0;
 }
