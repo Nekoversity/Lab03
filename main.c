@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "stdafx.h"
 
 #define BUFFER_SIZE 100
 
@@ -47,6 +45,8 @@ int array_init_neg()
 
     return 0;
 }
+
+
 
 int main()
 {
