@@ -7,6 +7,10 @@
 #IncludeRegexTransform: 
 
 D:/dev/cpp/uni/Lab03/main.c
+stdafx.h
+D:/dev/cpp/uni/Lab03/stdafx.h
+
+D:/dev/cpp/uni/Lab03/stdafx.h
 stdio.h
 -
 stdlib.h

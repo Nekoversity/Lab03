@@ -10,3 +10,12 @@
         a[i] = init_func;                \
     }                                    \
 }
+
+#define PRINT_ARRAY(arr, size) \
+{                              \
+    int i;                     \
+    for (i = 0; i < size; ++i) \
+    {                          \
+        printf("%d\t", arr[i]);  \
+    }\
+}
