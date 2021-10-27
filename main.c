@@ -176,8 +176,64 @@ int binary_search()
     return 0;
 }
 
+double fRand(double fMin, double fMax)
+{
+    double f = (double)rand() / RAND_MAX;
+    return fMin + f * (fMax - fMin);
+}
+
+int float_matrix()
+{
+    srand(time(NULL));
+
+    int m = 10, n = 10;
+    double a[m][n], min = 0.0, max = 20.0;
+
+    for (int i = 0; i < m; ++i)
+    {
+        for (int j = 0; j < n; ++j) {
+            a[i][j] = fRand(min, max);
+        }
+    }
+    for (int i = 0; i < m; ++i)
+    {
+        printf("\n");
+        for (int j = 0; j < n; ++j)
+        {
+            printf("%.3f\t", a[i][j]);
+        }
+    }
+
+    double fmin = a[0][0], fmax = a[0][0];
+    int ifminm, ifminn, ifmaxm, ifmaxn;
+
+    printf("\n\n");
+
+    for (int i = 0; i < m; ++i)
+    {
+        for (int j = 0; j < n; ++j)
+        {
+            if (a[i][j] > fmax)
+            {
+                fmax = a[i][j];
+                ifmaxm = i; ifmaxn = j;
+            }
+            else if (a[i][j] < fmin)
+            {
+                fmin = a[i][j];
+                ifminm = i; ifminn = j;
+            }
+        }
+    }
+
+    printf("Min: a[%d, %d] = %.3f;\nMax: a[%d, %d] = %.3f;\n",
+           ifminm, ifminn, fmin, ifmaxm, ifmaxn, fmax);
+
+    return 0;
+}
+
 int main()
 {
-
+    float_matrix();
     return 0;
 }
